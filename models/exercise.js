@@ -49,19 +49,3 @@ const ExerciseSchema = new Schema({
 const Exercise = mongoose.model("Exercise", ExerciseSchema);
 
 module.exports = Exercise;
-
-// {
-//     type: "resistance",
-//     name: "Lateral Pull",
-//     duration: 20,
-//     weight: 300,
-//     reps: 10,
-//     sets: 4,
-// },
-
-// {
-//     type: "cardio",
-//     name: "Running",
-//     duration: 25,
-//     distance: 4,
-// },
