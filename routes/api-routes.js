@@ -37,4 +37,14 @@ router.put("/api/workouts/:id", (req, res) => {
 		});
 });
 
+router.get("/api/workouts/range", (req, res) => {
+	Workout.find()
+		.then((allWorkouts) => {
+			res.json(allWorkouts);
+		})
+		.catch((err) => {
+			res.status(400).json(err);
+		});
+});
+
 module.exports = router;
