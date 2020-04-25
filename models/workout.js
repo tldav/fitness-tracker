@@ -24,7 +24,8 @@ const WorkoutSchema = new Schema({
 				type: Number,
 				trim: true,
 				min: 1,
-				max: 1000
+				max: 1000,
+				required: true
 			},
 			weight: {
 				type: Number,
