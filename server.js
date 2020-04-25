@@ -14,6 +14,7 @@ app.use(require("./routes/html-routes"));
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
 	useNewUrlParser: true,
+	useFindAndModify: false
 });
 
 app.listen(PORT, () => {
