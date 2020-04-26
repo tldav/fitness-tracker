@@ -12,14 +12,10 @@ app.use(express.static("public"));
 app.use(require("./routes/api-routes"));
 app.use(require("./routes/html-routes"));
 
-mongoose.connect(
-	process.env.MONGODB_URI ||
-		"mongodb://user:password@ds153096.mlab.com:53096/heroku_nhrjdkmm",
-	{
-		useNewUrlParser: true,
-		useFindAndModify: false
-	}
-);
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
+	useNewUrlParser: true,
+	useFindAndModify: false
+});
 
 app.listen(PORT, () => {
 	console.log(`App running on port ${PORT}!`);

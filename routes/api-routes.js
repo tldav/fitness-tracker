@@ -1,6 +1,8 @@
 const router = require("express").Router();
+// Don't need a universal db model variable. Only using the one model (Workout).
 const Workout = require("../models/workout.js");
 
+// Gets all workouts.
 router.get("/api/workouts", (req, res) => {
 	Workout.find()
 		.then((allWorkouts) => {
@@ -11,6 +13,7 @@ router.get("/api/workouts", (req, res) => {
 		});
 });
 
+// Idk why I destructured req.body in the callback parameter here but I'm leaving it. Seems silly to do it in this simple circumstance. Anyway... This creates a new workout. The front end swaps to an input for adding an exercise to the workout that was created using this post.
 router.post("/api/workouts", ({ body }, res) => {
 	Workout.create(body)
 		.then((newWorkout) => {
@@ -22,6 +25,7 @@ router.post("/api/workouts", ({ body }, res) => {
 		});
 });
 
+// This endpoint is hit when adding an exercise to a new workout AND to the last workout. Pushes the new exercise object to the array of exercises in the Workout model. The workout is targeted by object id.
 router.put("/api/workouts/:id", (req, res) => {
 	Workout.updateOne(
 		{ _id: req.params.id },
@@ -37,6 +41,7 @@ router.put("/api/workouts/:id", (req, res) => {
 		});
 });
 
+// Gets all workouts for the stats page. Front end handles the graphing.
 router.get("/api/workouts/range", (req, res) => {
 	Workout.find()
 		.then((allWorkouts) => {
