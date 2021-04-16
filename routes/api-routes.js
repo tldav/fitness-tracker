@@ -13,7 +13,6 @@ router.get("/api/workouts", (req, res) => {
 		});
 });
 
-// Idk why I destructured req.body in the callback parameter here but I'm leaving it. Seems silly to do it in this simple circumstance. Anyway... This creates a new workout. The front end swaps to an input for adding an exercise to the workout that was created using this post.
 router.post("/api/workouts", ({ body }, res) => {
 	Workout.create(body)
 		.then((newWorkout) => {
