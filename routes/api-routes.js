@@ -39,7 +39,6 @@ router.put("/api/workouts/:id", (req, res) => {
 		});
 });
 
-// Gets all workouts for the stats page. Front end handles the graphing.
 router.get("/api/workouts/range", (req, res) => {
 	Workout.find()
 		.then((allWorkouts) => {
