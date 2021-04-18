@@ -24,7 +24,6 @@ router.post("/api/workouts", ({ body }, res) => {
 		});
 });
 
-// This endpoint is hit when adding an exercise to a new workout AND to the last workout. Pushes the new exercise object to the array of exercises in the Workout model. The workout is targeted by object id.
 router.put("/api/workouts/:id", (req, res) => {
 	Workout.updateOne(
 		{ _id: req.params.id },
