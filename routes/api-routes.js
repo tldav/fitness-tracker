@@ -1,5 +1,4 @@
 const router = require("express").Router();
-// Don't need a universal db model variable. Only using the one model (Workout).
 const Workout = require("../models/workout.js");
 
 // Gets all workouts.
